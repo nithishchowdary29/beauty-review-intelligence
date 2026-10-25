@@ -1,0 +1,10 @@
+{
+  "raw_rows": 1820,
+  "duplicate_ids_removed": 20,
+  "invalid_or_missing_ratings_removed": 10,
+  "empty_text_rows_removed": 10,
+  "invalid_dates_retained_as_missing": 5,
+  "conflicting_text_rows_removed": 159,
+  "repeated_text_rows_removed": 305,
+  "clean_rows": 1316
+}

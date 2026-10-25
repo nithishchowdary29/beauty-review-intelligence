@@ -1,0 +1,89 @@
+{
+  "provenance": "SYNTHETIC DEMONSTRATION ONLY",
+  "seed": 42,
+  "audit": {
+    "raw_rows": 1820,
+    "duplicate_ids_removed": 20,
+    "invalid_or_missing_ratings_removed": 10,
+    "empty_text_rows_removed": 10,
+    "invalid_dates_retained_as_missing": 5,
+    "conflicting_text_rows_removed": 159,
+    "repeated_text_rows_removed": 305,
+    "clean_rows": 1316
+  },
+  "splits": {
+    "train": {
+      "rows": 803,
+      "products": 72,
+      "negative_rate": 0.3848069738480697
+    },
+    "validation": {
+      "rows": 247,
+      "products": 24,
+      "negative_rate": 0.3765182186234818
+    },
+    "test": {
+      "rows": 266,
+      "products": 24,
+      "negative_rate": 0.42857142857142855
+    }
+  },
+  "chosen_model": "Logistic regression",
+  "threshold": 0.45000000000000007,
+  "confusion_matrix": [
+    [
+      134,
+      18
+    ],
+    [
+      32,
+      82
+    ]
+  ],
+  "conditional_f1_bootstrap_interval": [
+    0.7029371837591015,
+    0.8200835424820542
+  ],
+  "metrics": [
+    {
+      "model": "Logistic regression",
+      "threshold": 0.45000000000000007,
+      "validation_f1": 0.8253968253968254,
+      "accuracy": 0.8120300751879699,
+      "precision": 0.82,
+      "recall": 0.7192982456140351,
+      "f1": 0.7663551401869159,
+      "average_precision": 0.7850869771790151,
+      "roc_auc": 0.8243882733148661
+    },
+    {
+      "model": "Multinomial naive Bayes",
+      "threshold": 0.45000000000000007,
+      "validation_f1": 0.7868852459016393,
+      "accuracy": 0.8007518796992481,
+      "precision": 0.7961165048543689,
+      "recall": 0.7192982456140351,
+      "f1": 0.7557603686635944,
+      "average_precision": 0.7808482636273475,
+      "roc_auc": 0.8165397045244691
+    },
+    {
+      "model": "Prior baseline",
+      "threshold": 0.5,
+      "validation_f1": null,
+      "accuracy": 0.5714285714285714,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "average_precision": 0.42857142857142855,
+      "roc_auc": 0.5
+    }
+  ],
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8"
+  },
+  "python": "3.12.14"
+}
