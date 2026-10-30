@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": [
+    "cleaning reconciliation",
+    "valid label mapping",
+    "product separation",
+    "exact text separation",
+    "holdout membership",
+    "confusion matrix",
+    "recomputed metrics",
+    "validation selection",
+    "threshold consistency",
+    "no reviewer identities or raw text in exported data"
+  ],
+  "clean_rows": 27609,
+  "test_rows": 5403
+}

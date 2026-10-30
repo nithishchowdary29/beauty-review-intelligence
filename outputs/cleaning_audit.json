@@ -1,10 +1,19 @@
 {
-  "raw_rows": 1820,
-  "duplicate_ids_removed": 20,
-  "invalid_or_missing_ratings_removed": 10,
-  "empty_text_rows_removed": 10,
-  "invalid_dates_retained_as_missing": 5,
-  "conflicting_text_rows_removed": 159,
-  "repeated_text_rows_removed": 305,
-  "clean_rows": 1316
+  "sampled_rows": 30000,
+  "sample_missing_text": 31,
+  "sample_missing_rating": 0,
+  "sample_missing_product": 0,
+  "invalid_labels_removed": 0,
+  "missing_product_removed": 0,
+  "unmatched_metadata_removed": 441,
+  "empty_text_removed": 31,
+  "invalid_dates_retained": 0,
+  "duplicate_text_rows": 1919,
+  "text_groups_with_conflicting_binary_labels": 19,
+  "negative_before_dedup": 4799,
+  "clean_rows": 27609,
+  "negative_after_dedup": 4712,
+  "clean_products": 8365,
+  "word_count_p99": 282.0,
+  "word_count_max": 2443
 }

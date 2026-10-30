@@ -1,0 +1,9 @@
+field,missing,dtype
+source_row,0,int64
+product_id,0,object
+rating,0,float64
+text,31,object
+timestamp,0,int64
+verified,0,bool
+author,0,object
+metadata_match,0,bool

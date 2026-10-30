@@ -1,0 +1,54 @@
+{
+  "training_rows": 16691,
+  "training_products": 5019,
+  "negative_count": 2849,
+  "negative_rate": 0.17069079144449104,
+  "length_by_label": {
+    "0": {
+      "n": 13842,
+      "median": 24.0,
+      "q25": 10.0,
+      "q75": 50.0
+    },
+    "1": {
+      "n": 2849,
+      "median": 24.0,
+      "q25": 12.0,
+      "q75": 49.0
+    }
+  },
+  "length_test": {
+    "method": "Exploratory row-level Mann Whitney U",
+    "U": 19974188.5,
+    "pvalue": 0.27382217548733045,
+    "rank_biserial_low_vs_other": 0.012996268522926568,
+    "caveat": "Reviews share products and authors; iid p value is descriptive and not confirmatory."
+  },
+  "top10_product_share": 0.13666047570547002,
+  "themes": [
+    {
+      "theme": "packaging",
+      "mentions": 901,
+      "negative_mentions": 203,
+      "low_rating_share": 0.2253052164261931
+    },
+    {
+      "theme": "fragrance",
+      "mentions": 2042,
+      "negative_mentions": 283,
+      "low_rating_share": 0.1385896180215475
+    },
+    {
+      "theme": "value",
+      "mentions": 2406,
+      "negative_mentions": 510,
+      "low_rating_share": 0.2119700748129676
+    },
+    {
+      "theme": "texture",
+      "mentions": 683,
+      "negative_mentions": 90,
+      "low_rating_share": 0.13177159590043924
+    }
+  ]
+}

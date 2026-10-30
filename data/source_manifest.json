@@ -1,0 +1,29 @@
+{
+  "dataset": "Amazon Review Data 2018 All Beauty full category",
+  "source_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/categoryFiles/All_Beauty.json.gz",
+  "publisher_documentation": "https://nijianmo.github.io/amazon/index.html",
+  "acquired_utc": "2026-10-30T09:14:16.701631+00:00",
+  "sha256": "a430509b38ff244fb75a84213e82ae64dc735158587687c80e86465d286bf22d",
+  "compressed_bytes": 46650072,
+  "source_rows": 371345,
+  "source_products": 32586,
+  "source_ratings": {
+    "1.0": 39261,
+    "4.0": 52687,
+    "5.0": 229549,
+    "2.0": 20293,
+    "3.0": 29555
+  },
+  "source_date_min": "2000-01-10T00:00:00+00:00",
+  "source_date_max": "2018-10-02T00:00:00+00:00",
+  "sampled_rows": 30000,
+  "seed": 42,
+  "sampling": "Uniform row reservoir over complete archive in source order",
+  "metadata_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/metaFiles2/meta_All_Beauty.json.gz",
+  "metadata_sha256": "f2da6049903fc132cbcf9a45c03128ab65ba7140e29691469ecd8ce839612ea3",
+  "metadata_rows": 32892,
+  "metadata_unique_asins": 32488,
+  "metadata_duplicate_asins": 404,
+  "raw_data_redistributed": false,
+  "notes": "Historical public research data. No live scraping. No broad redistribution license asserted. Metadata matching is a coverage check, not complete semantic domain validation."
+}

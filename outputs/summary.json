@@ -1,89 +1,266 @@
 {
-  "provenance": "SYNTHETIC DEMONSTRATION ONLY",
+  "status": "Executed on real public reviews",
   "seed": 42,
+  "sample_size": 30000,
+  "dataset": {
+    "dataset": "Amazon Review Data 2018 All Beauty full category",
+    "source_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/categoryFiles/All_Beauty.json.gz",
+    "publisher_documentation": "https://nijianmo.github.io/amazon/index.html",
+    "acquired_utc": "2026-10-30T09:14:16.701631+00:00",
+    "sha256": "a430509b38ff244fb75a84213e82ae64dc735158587687c80e86465d286bf22d",
+    "compressed_bytes": 46650072,
+    "source_rows": 371345,
+    "source_products": 32586,
+    "source_ratings": {
+      "1.0": 39261,
+      "4.0": 52687,
+      "5.0": 229549,
+      "2.0": 20293,
+      "3.0": 29555
+    },
+    "source_date_min": "2000-01-10T00:00:00+00:00",
+    "source_date_max": "2018-10-02T00:00:00+00:00",
+    "sampled_rows": 30000,
+    "seed": 42,
+    "sampling": "Uniform row reservoir over complete archive in source order",
+    "metadata_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/metaFiles2/meta_All_Beauty.json.gz",
+    "metadata_sha256": "f2da6049903fc132cbcf9a45c03128ab65ba7140e29691469ecd8ce839612ea3",
+    "metadata_rows": 32892,
+    "metadata_unique_asins": 32488,
+    "metadata_duplicate_asins": 404,
+    "raw_data_redistributed": false,
+    "notes": "Historical public research data. No live scraping. No broad redistribution license asserted. Metadata matching is a coverage check, not complete semantic domain validation."
+  },
   "audit": {
-    "raw_rows": 1820,
-    "duplicate_ids_removed": 20,
-    "invalid_or_missing_ratings_removed": 10,
-    "empty_text_rows_removed": 10,
-    "invalid_dates_retained_as_missing": 5,
-    "conflicting_text_rows_removed": 159,
-    "repeated_text_rows_removed": 305,
-    "clean_rows": 1316
+    "sampled_rows": 30000,
+    "sample_missing_text": 31,
+    "sample_missing_rating": 0,
+    "sample_missing_product": 0,
+    "invalid_labels_removed": 0,
+    "missing_product_removed": 0,
+    "unmatched_metadata_removed": 441,
+    "empty_text_removed": 31,
+    "invalid_dates_retained": 0,
+    "duplicate_text_rows": 1919,
+    "text_groups_with_conflicting_binary_labels": 19,
+    "negative_before_dedup": 4799,
+    "clean_rows": 27609,
+    "negative_after_dedup": 4712,
+    "clean_products": 8365,
+    "word_count_p99": 282.0,
+    "word_count_max": 2443
+  },
+  "eda": {
+    "training_rows": 16691,
+    "training_products": 5019,
+    "negative_count": 2849,
+    "negative_rate": 0.17069079144449104,
+    "length_by_label": {
+      "0": {
+        "n": 13842,
+        "median": 24.0,
+        "q25": 10.0,
+        "q75": 50.0
+      },
+      "1": {
+        "n": 2849,
+        "median": 24.0,
+        "q25": 12.0,
+        "q75": 49.0
+      }
+    },
+    "length_test": {
+      "method": "Exploratory row-level Mann Whitney U",
+      "U": 19974188.5,
+      "pvalue": 0.27382217548733045,
+      "rank_biserial_low_vs_other": 0.012996268522926568,
+      "caveat": "Reviews share products and authors; iid p value is descriptive and not confirmatory."
+    },
+    "top10_product_share": 0.13666047570547002,
+    "themes": [
+      {
+        "theme": "packaging",
+        "mentions": 901,
+        "negative_mentions": 203,
+        "low_rating_share": 0.2253052164261931
+      },
+      {
+        "theme": "fragrance",
+        "mentions": 2042,
+        "negative_mentions": 283,
+        "low_rating_share": 0.1385896180215475
+      },
+      {
+        "theme": "value",
+        "mentions": 2406,
+        "negative_mentions": 510,
+        "low_rating_share": 0.2119700748129676
+      },
+      {
+        "theme": "texture",
+        "mentions": 683,
+        "negative_mentions": 90,
+        "low_rating_share": 0.13177159590043924
+      }
+    ]
   },
   "splits": {
     "train": {
-      "rows": 803,
-      "products": 72,
-      "negative_rate": 0.3848069738480697
+      "rows": 16691,
+      "products": 5019,
+      "low_rating_count": 2849,
+      "low_rating_rate": 0.17069079144449104
     },
     "validation": {
-      "rows": 247,
-      "products": 24,
-      "negative_rate": 0.3765182186234818
+      "rows": 5515,
+      "products": 1673,
+      "low_rating_count": 990,
+      "low_rating_rate": 0.17951042611060744
     },
     "test": {
-      "rows": 266,
-      "products": 24,
-      "negative_rate": 0.42857142857142855
+      "rows": 5403,
+      "products": 1673,
+      "low_rating_count": 873,
+      "low_rating_rate": 0.16157690172126596
     }
   },
-  "chosen_model": "Logistic regression",
-  "threshold": 0.45000000000000007,
-  "confusion_matrix": [
-    [
-      134,
-      18
-    ],
-    [
-      32,
-      82
-    ]
-  ],
-  "conditional_f1_bootstrap_interval": [
-    0.7029371837591015,
-    0.8200835424820542
-  ],
+  "train_test_shared_authors": 50,
+  "selected_model": "Logistic text",
+  "selected_threshold": 0.5750000000000002,
   "metrics": [
     {
-      "model": "Logistic regression",
-      "threshold": 0.45000000000000007,
-      "validation_f1": 0.8253968253968254,
-      "accuracy": 0.8120300751879699,
-      "precision": 0.82,
-      "recall": 0.7192982456140351,
-      "f1": 0.7663551401869159,
-      "average_precision": 0.7850869771790151,
-      "roc_auc": 0.8243882733148661
+      "model": "Logistic text",
+      "threshold": 0.5750000000000002,
+      "accuracy": 0.9100499722376457,
+      "precision": 0.7043294614572334,
+      "recall": 0.7640320733104238,
+      "f1": 0.7329670329670329,
+      "average_precision": 0.7865108215735283,
+      "roc_auc": 0.9462337123769499,
+      "brier": 0.08050677128133252
     },
     {
-      "model": "Multinomial naive Bayes",
-      "threshold": 0.45000000000000007,
-      "validation_f1": 0.7868852459016393,
-      "accuracy": 0.8007518796992481,
-      "precision": 0.7961165048543689,
-      "recall": 0.7192982456140351,
-      "f1": 0.7557603686635944,
-      "average_precision": 0.7808482636273475,
-      "roc_auc": 0.8165397045244691
+      "model": "Naive Bayes",
+      "threshold": 0.15000000000000002,
+      "accuracy": 0.8991301129002406,
+      "precision": 0.6646586345381527,
+      "recall": 0.7583046964490263,
+      "f1": 0.7084002140181915,
+      "average_precision": 0.7676954245730193,
+      "roc_auc": 0.9360399930209446,
+      "brier": 0.0844777837761306
     },
     {
-      "model": "Prior baseline",
+      "model": "Logistic text plus style",
+      "threshold": 0.5250000000000001,
+      "accuracy": 0.9033870072182121,
+      "precision": 0.6663507109004739,
+      "recall": 0.8052691867124857,
+      "f1": 0.729253112033195,
+      "average_precision": 0.7818567192756962,
+      "roc_auc": 0.9454918084603343,
+      "brier": 0.08110828462854662
+    },
+    {
+      "model": "Majority baseline",
       "threshold": 0.5,
-      "validation_f1": null,
-      "accuracy": 0.5714285714285714,
+      "accuracy": 0.8384230982787341,
       "precision": 0.0,
       "recall": 0.0,
       "f1": 0.0,
-      "average_precision": 0.42857142857142855,
-      "roc_auc": 0.5
+      "average_precision": 0.16157690172126596,
+      "roc_auc": 0.5,
+      "brier": 0.13555286953730944
+    },
+    {
+      "model": "All flagged baseline",
+      "threshold": 0.5,
+      "accuracy": 0.16157690172126596,
+      "precision": 0.16157690172126596,
+      "recall": 1.0,
+      "f1": 0.27820267686424477,
+      "average_precision": 0.16157690172126596,
+      "roc_auc": 0.5,
+      "brier": 0.8384230982787341
     }
   ],
+  "validation": [
+    {
+      "model": "Logistic text",
+      "parameter": 2,
+      "threshold": 0.5750000000000002,
+      "accuracy": 0.9111514052583862,
+      "precision": 0.7399232245681382,
+      "recall": 0.7787878787878788,
+      "f1": 0.7588582677165354,
+      "average_precision": 0.8301731700647479,
+      "roc_auc": 0.9520072548691332,
+      "brier": 0.07893834336165505
+    },
+    {
+      "model": "Naive Bayes",
+      "parameter": 0.5,
+      "threshold": 0.15000000000000002,
+      "accuracy": 0.899728014505893,
+      "precision": 0.7047797563261481,
+      "recall": 0.7595959595959596,
+      "f1": 0.7311618862421001,
+      "average_precision": 0.8119268432721594,
+      "roc_auc": 0.9427672303141916,
+      "brier": 0.09036352112734357
+    },
+    {
+      "model": "Logistic text plus style",
+      "parameter": 2,
+      "threshold": 0.5250000000000001,
+      "accuracy": 0.9057116953762466,
+      "precision": 0.7032871972318339,
+      "recall": 0.8212121212121212,
+      "f1": 0.7576887232059646,
+      "average_precision": 0.8292000833085795,
+      "roc_auc": 0.9518924047100843,
+      "brier": 0.07902585347973683
+    }
+  ],
+  "confusion_matrix": [
+    [
+      4250,
+      280
+    ],
+    [
+      206,
+      667
+    ]
+  ],
+  "bootstrap_intervals": {
+    "precision": [
+      0.671499499552231,
+      0.7363867513789466
+    ],
+    "recall": [
+      0.7343604100011849,
+      0.7920699794178183
+    ],
+    "f1": [
+      0.7081987915200225,
+      0.7584511484888744
+    ],
+    "average_precision": [
+      0.7539870094132424,
+      0.8217516399159279
+    ]
+  },
+  "bootstrap_replicates": 500,
+  "selection_rule": "Training group CV AP for hyperparameters then validation AP for model and validation F1 for threshold",
+  "no_product_overlap": true,
+  "no_exact_text_overlap": true,
+  "runtime_seconds": 47.95,
+  "python": "3.12.14",
   "versions": {
-    "pandas": "2.2.3",
     "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
     "scikit-learn": "1.8.0",
     "matplotlib": "3.10.8"
-  },
-  "python": "3.12.14"
+  }
 }
