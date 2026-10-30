@@ -94,3 +94,8 @@ is an imperfect proxy for sentiment. Real duplicates may be legitimate, and
 three-star feedback may contain important complaints. Human review remains
 necessary. No hours worked, deployment, employer results or real customer
 outcomes are claimed.
+
+
+## October 2026 revision notice
+
+The existing default-branch files include the original **synthetic-data prototype**. They should not be represented as the revised real-public-data analysis. A separately prepared revised package covers Weeks 2–6 with public Amazon All Beauty reviews, cleaning, EDA, modeling, evaluation, and reproducibility evidence. Until that package's binary reports, data, plots and updated source files are uploaded and verified on GitHub, the repository is **not** the final revised submission. Keep Week 1 as previously submitted. Do not submit the existing synthetic outputs as evidence of real-data analysis.
